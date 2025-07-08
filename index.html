@@ -61,8 +61,11 @@
     <select id="locationSelect">
     <option value="">-- เลือกพื้นที่ --</option>
     <option value="ปากน้ำปราณ">ปากน้ำปราณ</option>
-    <option value="วัดวังก์พง">วัดวังก์พง</option>
-    <option value="โรงเรียนรักษ์วิทยา">โรงเรียนรักษ์วิทยา</option>
+    <option value="วังก์พง">วังก์พง</option>
+    <option value="หนองตาแต้ม">หนองตาแต้ม</option>
+    <option value="เขาน้อย">เขาน้อย</option>
+    <option value="เขาเจ้า">เขาเจ้า</option>
+    <option value="ปราณบุรี">ปราณบุรี</option>
     </select>
     
     <br>
@@ -80,11 +83,13 @@
         let place = '';
         let maplink = '';
 
+
+        //เงื่อนไขสถานที่ท่องเที่ยว
         if (style === 'สถานที่ท่องเที่ยว' && location === 'ปากน้ำปราณ') {
             place = 'ชายหาดปากน้ำปราณ';
             maplink = 'https://www.google.co.th/maps/place/ปากน้ำปราณ+อำเภอปราณบุรี+ประจวบคีรีขันธ์/@12.390632,99.9795452,13z/data=!4m6!3m5!1s0x30fdb3cd5a78dbdf:0xb3cfe456a28ec8fe!8m2!3d12.3800116!4d99.9800438!16s%2Fg%2F11sk54wz25?entry=ttu&g_ep=EgoyMDI1MDYyNi4wIKXMDSoASAFQAw%3D%3D'; // ใส่ลิงก์เต็ม
             imageSrc = 'https://cms.dmpcdn.com/travel/2021/01/20/22089640-5ae9-11eb-8a76-d37b8b52c7e2_original.jpg'; // ใส่ URL รูปที่เกี่ยวข้อง
-        } else if (style === 'สถานที่ท่องเที่ยว' && location === 'วัดวังก์พง') {
+        } else if (style === 'สถานที่ท่องเที่ยว' && location === 'วังก์พง') {
             place = '';
             maplink = 'https://www.google.co.th/maps/place/วัดวังก์พง/@12.4034043,99.9259044,17.04z/data=!4m6!3m5!1s0x30fdb38309a1e4ff:0x317bb872b103bce!8m2!3d12.4034023!4d99.9284243!16s%2Fg%2F11gyxj7ct2?entry=ttu&g_ep=EgoyMDI1MDYyNi4wIKXMDSoASAFQAw%3D%3D'; // ใส่ลิงก์เต็ม
             imageSrc = 'https://watwangpong.wordpress.com/wp-content/uploads/2013/04/img_00041.jpg';
@@ -92,7 +97,88 @@
             place = '';
             maplink = 'https://www.google.co.th/maps/place/โรงเรียนรักษ์วิทยา+Rakwittaya+School/@12.4054663,99.9219492,17z/data=!3m1!4b1!4m6!3m5!1s0x30fdb2c29fa828a7:0x40616ffe81e4d732!8m2!3d12.4054663!4d99.9244624!16s%2Fg%2F11b7q7t5_y?entry=ttu&g_ep=EgoyMDI1MDYyNi4wIKXMDSoASAFQAw%3D%3D'; // ใส่ลิงก์เต็ม
             imageSrc = 'https://www.rakwittaya.ac.th/images/headers/SCHOOL2.png';
-        } else {
+        } 
+        else if (style === 'สถานที่ท่องเที่ยว' && location === 'หนองตาแต้ม') {
+            place = 'วัดหนองตาแต้ม';
+            maplink = '';
+            imageSrc = '';
+        
+        }
+        else if (style === 'สถานที่ท่องเที่ยว' && location === 'เขาน้อย') {
+            place = 'วัดเขาน้อย';
+            maplink = '';
+            imageSrc = '';
+        
+        }else if (style === 'สถานที่ท่องเที่ยว' && location === 'เขาเจ้า') {
+            place = 'น้ำตกแพรกตะลุย';
+            maplink = '';
+            imageSrc = '';
+        
+        }else if (style === 'สถานที่ท่องเที่ยว' && location === 'ปราณบุรี') {
+            place = 'ถนนคนเดินปราณบุรี';
+            maplink = '';
+            imageSrc = '';
+        }
+
+        
+        //เงื่อนไขที่พัก
+        else if (style === 'ที่พัก' && location === 'ปากน้ำปราณ') {
+            place = '....รีสอร์ท';
+            maplink = '';
+            imageSrc = '';
+        
+        }else if (style === 'ที่พัก' && location === 'วังก์พง') {
+            place = 'รีสอร์ทริมบึง';
+            maplink = '';
+            imageSrc = '';
+        }else if (style === 'ที่พัก' && location === 'หนองตาแต้ม') {
+            place = '';
+            maplink = '';
+            imageSrc = '';
+        }else if (style === 'ที่พัก' && location === 'เขาน้อย') {
+            place = '';
+            maplink = '';
+            imageSrc = '';
+        }else if (style === 'ที่พัก' && location === 'เขาเจ้า') {
+            place = '';
+            maplink = '';
+            imageSrc = '';
+        }else if (style === 'ที่พัก' && location === 'ปราณบุรี') {
+            place = 'บ้านเพื่อนรีสอร์ท';
+            maplink = '';
+            imageSrc = '';
+
+
+        //เงื่อนไขร้านอาหาร
+        }else if (style === 'ร้านอาหาร' && location === 'ปากน้ำปราณ') {
+            place = 'OX Sea-food';
+            maplink = '';
+            imageSrc = '';
+        }else if (style === 'ร้านอาหาร' && location === 'วังก์พง') {
+            place = 'ครัวหน้าค่าย';
+            maplink = '';
+            imageSrc = '';
+        }else if (style === 'ร้านอาหาร' && location === 'หนองตาแต้ม') {
+            place = '';
+            maplink = '';
+            imageSrc = '';
+        }else if (style === 'ร้านอาหาร' && location === 'เขาน้อย') {
+            place = 'ร้านถูกดี';
+            maplink = '';
+            imageSrc = '';
+        }else if (style === 'ร้านอาหาร' && location === 'เขาเจ้า') {
+            place = '';
+            maplink = '';
+            imageSrc = '';
+        }else if (style === 'ร้านอาหาร' && location === 'ปราณบุรี') {
+            place = 'ถนนคนเดินปราณบุรี';
+            maplink = '';
+            imageSrc = '';
+        }
+        
+        
+        
+        else {
             resultDiv.innerHTML = "<p>ไม่มีที่เที่ยวที่ตรงใจ ได้กรุณาเลือกใหม่ค่ะ</p>";
             return;
         }
